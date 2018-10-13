@@ -1,21 +1,19 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Header = props => {
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark bg-success mb-3 py-0">
+    <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-3 py-0">
       <div className="container">
         <a href="/" className="navbar-brand">
           Flash Study
         </a>
-        <ul className="navbar-nav mr-auto">
+        <ul className="navbar-nav">
           <li>
-            <NavLink exact to="/">
-              Home
-            </NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/cards">Cards</NavLink>
+            <NavLink to="/about">About</NavLink>
           </li>
         </ul>
       </div>
