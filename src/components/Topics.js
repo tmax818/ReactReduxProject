@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 import TopicForm from './TopicForm';
 import { connect } from 'react-redux';
+import createTopic from '../actions';
 
 class Topics extends Component {
   state = {
-    title: ''
+    topic: ''
   };
 
   handleChange = e => {
     e.preventDefault();
     this.setState({
-      title: e.target.value
+      topic: e.target.value
     });
     console.log(this.state);
   };
 
   handleSubmit = e => {
     e.preventDefault();
-    console.log(`saveing: ${this.state.title}`);
+    this.props.createTopic(this.state.topic);
   };
   render() {
     return (
@@ -31,4 +32,9 @@ class Topics extends Component {
     );
   }
 }
-export default connect()(Topics);
+
+const mapDispatchtoProps = state => {};
+export default connect(
+  mapDispatchtoProps,
+  { createTopic }
+)(Topics);

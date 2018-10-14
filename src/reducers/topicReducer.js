@@ -1,7 +1,7 @@
-const topicReducer = (state = [], action) => {
+const topicReducer = (state = ['hello'], action) => {
   switch (action.type) {
     case 'CREATE_TOPIC':
-      return console.log('hi');
+      return state.concat(action.topic);
     default:
       return state;
   }
