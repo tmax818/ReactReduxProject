@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import TopicForm from './TopicForm';
+import TopicList from './TopicList';
 import { connect } from 'react-redux';
-import createTopic from '../actions';
+import { createTopic } from '../actions';
 
 class Topics extends Component {
   state = {
@@ -30,7 +31,7 @@ class Topics extends Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
-        {this.props.topics}
+        <TopicList />
       </div>
     );
   }
