@@ -19,7 +19,7 @@ const Header = props => {
           {'|'}
 
           <li>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/study">Study</NavLink>
           </li>
           {'|'}
         </ul>
