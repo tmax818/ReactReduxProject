@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import TopicForm from './TopicForm';
 
-export default class Topics extends Component {
+class Topics extends Component {
   render() {
     return (
       <div className="jumbotron">
         <h1>Topic List</h1>
-        <p>topic list in the form of buttons go here...</p>
+        <button className="btn btn-primary">View Popular Topics</button>
+        <h1>Create New Topic</h1>
+        <TopicForm />
       </div>
     );
   }
 }
+export default Topics;

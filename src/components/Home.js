@@ -5,8 +5,6 @@ class Home extends Component {
     return (
       <div className="jumbotron">
         <h1 className="display">Home</h1>
-        <button className="btn btn-primary">Create New Topic</button>
-        <button className="btn btn-primary">View Popular Topics</button>
       </div>
     );
   }
