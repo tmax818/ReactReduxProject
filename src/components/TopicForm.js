@@ -6,7 +6,7 @@ export default class TopicForm extends Component {
       <div>
         <form onSubmit={this.props.handleSubmit}>
           <input
-            value={this.props.title}
+            value={this.props.value}
             type="text"
             onChange={this.props.handleChange}
           />

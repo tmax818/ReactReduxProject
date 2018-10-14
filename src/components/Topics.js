@@ -13,18 +13,20 @@ class Topics extends Component {
     this.setState({
       topic: e.target.value
     });
-    console.log(this.state);
   };
 
   handleSubmit = e => {
     e.preventDefault();
     this.props.createTopic(this.state.topic);
+    this.setState({ topic: '' });
+    console.log(this.state);
   };
   render() {
     return (
       <div className="jumbotron">
         <h1>Create New Topic</h1>
         <TopicForm
+          value={this.state.topic}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
