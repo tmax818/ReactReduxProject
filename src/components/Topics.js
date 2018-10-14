@@ -30,12 +30,18 @@ class Topics extends Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
+        {this.props.topics}
       </div>
     );
   }
 }
 
-const mapDispatchtoProps = state => {};
+const mapDispatchtoProps = state => {
+  return {
+    topics: state.topic
+  };
+};
+
 export default connect(
   mapDispatchtoProps,
   { createTopic }
