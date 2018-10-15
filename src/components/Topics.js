@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import TopicForm from './TopicForm';
 import TopicList from './TopicList';
 import { connect } from 'react-redux';
-import { createTopic } from '../actions';
+import { postTopic } from '../actions';
 
 class Topics extends Component {
   state = {
@@ -18,9 +18,8 @@ class Topics extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.createTopic(this.state.topic);
+    this.props.postTopic(this.state.topic);
     this.setState({ topic: '' });
-    console.log(this.state);
   };
   render() {
     return (
@@ -45,5 +44,5 @@ const mapDispatchtoProps = state => {
 
 export default connect(
   mapDispatchtoProps,
-  { createTopic }
+  { postTopic }
 )(Topics);

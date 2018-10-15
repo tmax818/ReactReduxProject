@@ -7,14 +7,17 @@ class TopicList extends Component {
     this.props.fetchTopics();
   }
 
+  renderButtons = () => {
+    return this.props.topics.map(topic => {
+      return <button className="btn btn-primary">{topic.title}</button>;
+    });
+  };
+
   render() {
-    console.log(this.props.topics);
     return (
       <div>
         <h1>Topic List</h1>
-        {this.props.topics.map(topic => {
-          return <button key={topic.id}>{topic.title}</button>;
-        })}
+        {this.renderButtons()}
       </div>
     );
   }

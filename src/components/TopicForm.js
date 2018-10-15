@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class TopicForm extends Component {
+class TopicForm extends Component {
   render() {
     return (
       <div>
@@ -18,3 +18,4 @@ export default class TopicForm extends Component {
     );
   }
 }
+export default TopicForm;
