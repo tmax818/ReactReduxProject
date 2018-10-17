@@ -28,7 +28,15 @@ const mapStateToProps = (state, ownProps) => {
     topics: state.topic
   };
 };
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchTopics: () => {
+      dispatch(fetchTopics());
+    }
+  };
+};
 export default connect(
   mapStateToProps,
-  { fetchTopics }
+  mapDispatchToProps
 )(TopicList);
