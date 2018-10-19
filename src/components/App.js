@@ -3,7 +3,7 @@ import Header from "./Header";
 import { Route, Switch } from "react-router-dom";
 import Topics from "../containers/Topics";
 import Home from "./Home";
-import Study from "./Study";
+import Topic from "./Topic";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -14,7 +14,7 @@ class App extends Component {
         <Header title="Flash Study" />
         <Switch>
           <Route path="/topics" component={Topics} />
-          <Route path="/:subject" component={Study} />
+          <Route path="/:topic" component={Topic} />
           <Route path="/" component={Home} />
         </Switch>
       </div>
