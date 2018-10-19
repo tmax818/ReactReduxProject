@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchTopics } from "../actions";
+import { Link } from "react-router-dom";
 
 class TopicList extends Component {
   componentDidMount() {
@@ -9,7 +10,11 @@ class TopicList extends Component {
 
   renderButtons = () => {
     return this.props.topics.map(topic => {
-      return <button className="btn btn-primary">{topic.title}</button>;
+      return (
+        <Link to={`/topics/${topic.title}`} className="btn btn-primary">
+          {topic.title}
+        </Link>
+      );
     });
   };
 

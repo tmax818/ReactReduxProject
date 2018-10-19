@@ -14,6 +14,7 @@ class App extends Component {
         <Header title="Flash Study" />
         <Route exact path="/" component={Home} />
         <Route path="/topics" component={Topics} />
+        <Route path="/topics/:subject" component={Study} />
         <Route path="/study" component={Study} />
       </div>
     );
