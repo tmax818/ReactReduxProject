@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "./Header";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Topics from "../containers/Topics";
 import Home from "./Home";
 import Study from "./Study";
@@ -12,10 +12,11 @@ class App extends Component {
     return (
       <div className="App">
         <Header title="Flash Study" />
-        <Route exact path="/" component={Home} />
-        <Route path="/topics" component={Topics} />
-        <Route path="/topics/:subject" component={Study} />
-        <Route path="/study" component={Study} />
+        <Switch>
+          <Route path="/topics" component={Topics} />
+          <Route path="/:subject" component={Study} />
+          <Route path="/" component={Home} />
+        </Switch>
       </div>
     );
   }

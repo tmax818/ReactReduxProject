@@ -5,7 +5,6 @@ const topicReducer = (state = [], action) => {
     case CREATE_TOPIC:
       return state.concat(action.topic);
     case FETCH_TOPICS:
-      console.log(action);
       return state.concat(action.payload.data);
     case POST_TOPIC:
       console.log(action);

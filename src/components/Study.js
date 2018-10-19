@@ -7,8 +7,7 @@ export default class Study extends Component {
     return (
       <div className="jumbotron">
         <h1>{subject}</h1>
-        <button className="btn btn-primary">Flash Cards</button>
-        <button className="btn btn-primary">Quiz</button>
+        <button className="btn btn-primary">View Subjects</button>
       </div>
     );
   }
