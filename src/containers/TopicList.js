@@ -11,7 +11,7 @@ class TopicList extends Component {
   renderButtons = () => {
     return this.props.topics.map(topic => {
       return (
-        <Link to={`/${topic.title}`} className="btn btn-primary">
+        <Link to={`/${topic.title}/${topic.id}`} className="btn btn-primary">
           {topic.title}
         </Link>
       );

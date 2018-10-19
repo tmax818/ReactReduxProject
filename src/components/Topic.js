@@ -3,7 +3,7 @@ import React, { Component } from "react";
 export default class Study extends Component {
   render() {
     const { topic } = this.props.match.params;
-
+    console.log(this.props);
     return (
       <div className="jumbotron">
         <h1>{topic}</h1>

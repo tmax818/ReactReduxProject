@@ -14,7 +14,7 @@ class App extends Component {
         <Header title="Flash Study" />
         <Switch>
           <Route path="/topics" component={Topics} />
-          <Route path="/:topic" component={Topic} />
+          <Route path="/:topic/:id" component={Topic} />
           <Route path="/" component={Home} />
         </Switch>
       </div>
