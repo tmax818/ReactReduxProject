@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import TopicForm from '../components/TopicForm';
-import TopicList from './TopicList';
-import { connect } from 'react-redux';
-import { postTopic } from '../actions';
+import React, { Component } from "react";
+import TopicForm from "../components/TopicForm";
+import TopicList from "./TopicList";
+import { connect } from "react-redux";
+import { postTopic } from "../actions";
 
 class Topics extends Component {
   state = {
-    topic: ''
+    topic: ""
   };
 
   handleChange = e => {
@@ -18,15 +18,15 @@ class Topics extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.postTopic(this.props.topics);
-    this.setState({ topic: '' });
+    this.props.postTopic(this.state.topic);
+    this.setState({ topic: "" });
   };
   render() {
     return (
       <div className="jumbotron">
         <h1>Create New Topic</h1>
         <TopicForm
-          value={this.state.topics}
+          value={this.state.topic}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
@@ -42,15 +42,7 @@ const mapStatetoProps = state => {
   };
 };
 
-const mapDispatchtoProps = dispatch => {
-  return {
-    postTopic: () => {
-      dispatch(postTopic());
-    }
-  };
-};
-
 export default connect(
   mapStatetoProps,
-  mapDispatchtoProps
+  { postTopic }
 )(Topics);

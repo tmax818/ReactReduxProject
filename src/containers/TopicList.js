@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchTopics } from '../actions';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { fetchTopics } from "../actions";
 
 class TopicList extends Component {
   componentDidMount() {
@@ -25,18 +25,11 @@ class TopicList extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    topics: state.topic
+    topics: state.topics
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    fetchTopics: () => {
-      dispatch(fetchTopics());
-    }
-  };
-};
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  { fetchTopics }
 )(TopicList);
