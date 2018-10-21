@@ -1,11 +1,6 @@
 import { createStore, applyMiddleware } from 'redux';
-import rootReducer from '../reducers';
+import promise from 'redux-promise';
 
-const configureStore = initalState => {
-  return createStore(
-    rootReducer,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  );
-};
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
-export default configureStore;
+export default createStoreWithMiddleware;

@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import Header from './Header';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Topics from './Topics';
+import { Route, Switch } from 'react-router-dom';
+import Topics from '../containers/Topics';
 import Home from './Home';
-import Study from './Study';
+import Topic from './topics/Topic';
+import Cards from '../containers/Cards';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   render() {
     return (
-      <Router>
+      <div className="App">
+        <Header title="Flash Study" />
         <Switch>
-          <div className="App">
-            <Header title="Flash Study" />
-            <Route exact path="/" component={Home} />
-            <Route path="/topics" component={Topics} />
-            <Route path="/study" component={Study} />
-          </div>
+          <Route exact path="/topics" component={Topics} />
+          <Route exact path="/:topic/:id" component={Topic} />
+          <Route exact path="/topics/:subject/:id" component={Cards} />
+          <Route path="/" component={Home} />
         </Switch>
-      </Router>
+      </div>
     );
   }
 }

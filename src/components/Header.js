@@ -1,5 +1,5 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 const Header = props => {
   return (
@@ -12,16 +12,11 @@ const Header = props => {
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
-          {'|'}
+          {"|"}
           <li>
             <NavLink to="/topics">Topics</NavLink>
           </li>
-          {'|'}
-
-          <li>
-            <NavLink to="/study">Study</NavLink>
-          </li>
-          {'|'}
+          {"|"}
         </ul>
       </div>
     </nav>
