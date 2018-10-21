@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TopicForm from '../components/TopicForm';
-import TopicList from '../components/TopicList';
+import TopicList from './TopicList';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
