@@ -7,10 +7,6 @@ import { Link } from 'react-router-dom';
 import { postTopic, fetchTopics } from '../actions';
 
 class Topics extends Component {
-  state = {
-    input: ''
-  };
-
   componentDidMount() {
     this.props.fetchTopics();
   }
@@ -29,18 +25,6 @@ class Topics extends Component {
     });
   };
 
-  handleChange = e => {
-    e.preventDefault();
-    this.setState({
-      input: e.target.value
-    });
-  };
-
-  handleSubmit = e => {
-    e.preventDefault();
-    this.props.postTopic(this.state.input);
-    this.setState({ input: '' });
-  };
   render() {
     return (
       <div className="jumbotron">
@@ -48,11 +32,7 @@ class Topics extends Component {
           topics={this.props.topics}
           renderButtons={this.renderButtons}
         />
-        <NewForm
-          value={this.state.input}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-        />
+        <NewForm postTopic={this.props.postTopic} />
       </div>
     );
   }
