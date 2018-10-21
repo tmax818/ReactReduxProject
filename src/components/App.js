@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import Header from "./Header";
-import { Route, Switch } from "react-router-dom";
-import Topics from "../containers/Topics";
-import Home from "./Home";
-import Topic from "./Topic";
+import React, { Component } from 'react';
+import Header from './Header';
+import { Route, Switch } from 'react-router-dom';
+import Topics from '../containers/Topics';
+import Home from './Home';
+import Topic from './topics/Topic';
 
-import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
   render() {

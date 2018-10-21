@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import TopicForm from '../components/TopicForm';
-import TopicList from '../components/TopicList';
+import TopicForm from '../components/topics/TopicForm';
+import TopicList from '../components/topics/TopicList';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -39,7 +39,6 @@ class Topics extends Component {
     this.setState({ input: '' });
   };
   render() {
-    console.log(this.props.topics);
     return (
       <div className="jumbotron">
         <h1>Create New Topic</h1>
