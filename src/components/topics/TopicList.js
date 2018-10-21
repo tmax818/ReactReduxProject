@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const TopicList = props => {
-  return (
-    <div>
-      <h1>Topic List</h1>
-      {props.renderButtons()}
-    </div>
-  );
-};
+class TopicList extends Component {
+  render() {
+    return (
+      <div>
+        <h1>Topic List</h1>
+        {this.props.renderButtons()}
+      </div>
+    );
+  }
+}
 
 export default TopicList;

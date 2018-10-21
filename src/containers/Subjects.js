@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NewForm from '../components/common/NewForm';
 import { connect } from 'react-redux';
 import { fetchSubjects } from '../actions';
 import { Link } from 'react-router-dom';

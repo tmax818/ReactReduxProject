@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import Topics from '../containers/Topics';
 import Home from './Home';
 import Topic from './topics/Topic';
-import Cards from './Cards';
+import Cards from '../containers/Cards';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 

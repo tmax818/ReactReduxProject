@@ -4,6 +4,7 @@ class TopicForm extends Component {
   render() {
     return (
       <div>
+        <h1>Create New Topic</h1>
         <form onSubmit={this.props.handleSubmit}>
           <input
             value={this.props.value}

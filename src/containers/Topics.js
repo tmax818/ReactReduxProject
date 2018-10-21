@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import TopicForm from '../components/topics/TopicForm';
+import NewForm from '../components/common/NewForm';
 import TopicList from '../components/topics/TopicList';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -13,7 +13,6 @@ class Topics extends Component {
 
   componentDidMount() {
     this.props.fetchTopics();
-    this.renderButtons();
   }
 
   renderButtons = () => {
@@ -45,13 +44,15 @@ class Topics extends Component {
   render() {
     return (
       <div className="jumbotron">
-        <h1>Create New Topic</h1>
-        <TopicForm
+        <TopicList
+          topics={this.props.topics}
+          renderButtons={this.renderButtons}
+        />
+        <NewForm
           value={this.state.input}
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
-        <TopicList renderButtons={this.renderButtons} />
       </div>
     );
   }
