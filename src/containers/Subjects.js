@@ -13,7 +13,7 @@ class Subjects extends Component {
       return (
         <Link
           key={subject.id}
-          to={`/${subject.title}/${subject.id}`}
+          to={`/topics/${subject.title}/${subject.id}`}
           className="btn btn-primary"
         >
           {subject.title}
@@ -23,7 +23,6 @@ class Subjects extends Component {
   };
 
   render() {
-    console.log(this.props);
     return (
       <div>
         <h1>Subjects</h1>
