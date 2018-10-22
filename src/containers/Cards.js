@@ -3,15 +3,16 @@ import Card from '../components/cards/Card';
 
 class Cards extends Component {
   render() {
-    const { subject } = this.props.match.params;
+    const { location, match } = this.props;
+    console.log(location, match);
     return (
       <div>
-        <h1>{subject} Cards</h1>
+        <h1>{location.state.title} Cards</h1>
         <button type="button" className="btn btn-primary btn-lg">
           Study Cards
         </button>
 
-        {/* <Card /> */}
+        <Card />
       </div>
     );
   }

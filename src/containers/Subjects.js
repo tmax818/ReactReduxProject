@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
-import NewForm from '../components/common/NewForm';
 import { connect } from 'react-redux';
 import { fetchSubjects } from '../actions';
 import { Link } from 'react-router-dom';
 
 class Subjects extends Component {
   componentDidMount() {
-    this.props.fetchSubjects(this.props.id);
+    this.props.fetchSubjects(this.props.props.match.params.id);
   }
 
   renderButtons = () => {
+    console.log(this.props.subjects);
     return this.props.subjects.map(subject => {
       return (
         <Link
           key={subject.id}
-          to={`/topics/${subject.title}/${subject.id}`}
+          to={{
+            pathname: `/topics/${subject.topic.id}/subjects/${subject.id}`,
+            state: { title: subject.title }
+          }}
           className="btn btn-primary"
         >
           {subject.title}

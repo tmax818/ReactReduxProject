@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class DataButtons extends Component {
   render() {
     return (
-      <div class="btn-group" role="group" aria-label="Basic example">
+      <div className="btn-group">
         <button type="button" className="btn btn-danger">
           No
         </button>

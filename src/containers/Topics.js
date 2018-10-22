@@ -16,7 +16,10 @@ class Topics extends Component {
       return (
         <Link
           key={topic.id}
-          to={`/${topic.title}/${topic.id}`}
+          to={{
+            pathname: `/topics/${topic.id}`,
+            state: { title: topic.title, topic_id: topic.id }
+          }}
           className="btn btn-primary"
         >
           {topic.title}
