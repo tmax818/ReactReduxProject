@@ -8,7 +8,10 @@ import { postTopic, fetchTopics } from '../actions';
 
 class Topics extends Component {
   componentDidMount() {
-    this.props.fetchTopics();
+    console.log(this.props.topics);
+    if (this.props.topics.length === 0) {
+      this.props.fetchTopics();
+    }
   }
 
   renderButtons = () => {
