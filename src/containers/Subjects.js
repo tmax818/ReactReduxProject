@@ -29,7 +29,7 @@ class Subjects extends Component {
   render() {
     return (
       <div>
-        <h1>Subjects</h1>
+        <h1>Subjects.js</h1>
         {this.renderButtons()}
         <NewSubjectForm
           topic_id={this.props.props.match.params.id}
