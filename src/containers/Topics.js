@@ -3,7 +3,6 @@ import NewForm from '../components/common/NewForm';
 import TopicList from '../components/topics/TopicList';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-
 import { postTopic, fetchTopics } from '../actions';
 
 class Topics extends Component {
@@ -37,7 +36,7 @@ class Topics extends Component {
           topics={this.props.topics}
           renderButtons={this.renderButtons}
         />
-        <NewForm postTopic={this.props.postTopic} />
+        <NewForm postFunc={this.props.postTopic} />
       </div>
     );
   }

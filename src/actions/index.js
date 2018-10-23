@@ -1,8 +1,8 @@
 import axios from 'axios';
-export const CREATE_TOPIC = 'create-topic';
 export const FETCH_TOPICS = 'fetch-topics';
 export const POST_TOPIC = 'post-topic';
 export const FETCH_SUBJECTS = 'fetch-subjects';
+export const POST_SUBJECT = 'post-subject';
 export const FETCH_CARDS = 'fetch-cards';
 
 const ROOT_URL = 'http://localhost:3001/api/topics';
@@ -23,14 +23,19 @@ export const postTopic = value => {
   };
 };
 
-export const createTopic = topic => {
-  return { type: CREATE_TOPIC, topic };
-};
-
 export const fetchSubjects = id => {
   const req = axios.get(`${ROOT_URL}/${id}/subjects`);
   return {
     type: FETCH_SUBJECTS,
+    payload: req
+  };
+};
+
+export const postSubject = (topic_id, value) => {
+  const req = axios.post(`${ROOT_URL}/${topic_id}/subjects`, { title: value });
+  console.log(req);
+  return {
+    type: POST_SUBJECT,
     payload: req
   };
 };

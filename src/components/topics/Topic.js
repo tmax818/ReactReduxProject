@@ -2,7 +2,6 @@ import React from 'react';
 import Subjects from '../../containers/Subjects';
 
 const Topic = props => {
-  console.log(props);
   return (
     <>
       <div className="jumbotron">

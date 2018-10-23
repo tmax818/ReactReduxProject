@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class NewForm extends Component {
+class NewSubjectForm extends Component {
   state = {
     input: ''
   };
@@ -14,14 +14,14 @@ class NewForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.postFunc(this.state.input);
+    this.props.postFunc(this.props.topic_id, this.state.input);
     this.setState({ input: '' });
   };
 
   render() {
     return (
       <div>
-        <h1>Create New Topic</h1>
+        <h1>Create New Subject</h1>
         <form onSubmit={this.handleSubmit}>
           <input
             value={this.state.input}
@@ -29,11 +29,11 @@ class NewForm extends Component {
             onChange={this.handleChange}
           />
           <button type="submit" className="btn btn-primary">
-            Create New Topic
+            Create New Subject
           </button>
         </form>
       </div>
     );
   }
 }
-export default NewForm;
+export default NewSubjectForm;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import NewSubjectForm from '../components/common/NewSubjectForm';
 import { connect } from 'react-redux';
-import { fetchSubjects } from '../actions';
+import { fetchSubjects, postSubject } from '../actions';
 import { Link } from 'react-router-dom';
 
 class Subjects extends Component {
@@ -30,6 +31,10 @@ class Subjects extends Component {
       <div>
         <h1>Subjects</h1>
         {this.renderButtons()}
+        <NewSubjectForm
+          topic_id={this.props.props.match.params.id}
+          postFunc={this.props.postSubject}
+        />
       </div>
     );
   }
@@ -43,6 +48,10 @@ const mapStatetoProps = state => {
 
 const mapDispathtoProps = dispatch => {
   return {
+    postSubject: (topic_id, subject) => {
+      dispatch(postSubject(topic_id, subject));
+    },
+
     fetchSubjects: id => {
       dispatch(fetchSubjects(id));
     }
