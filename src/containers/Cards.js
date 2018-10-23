@@ -1,26 +1,56 @@
 import React, { Component } from 'react';
-import Card from '../components/cards/Card';
 import { connect } from 'react-redux';
 import { fetchCards } from '../actions';
 
 class Cards extends Component {
-  componentDidMount() {
-    console.log(this.props);
+  state = {
+    show: false,
+    front: '',
+    back: '',
+    rating: ''
+  };
 
-    this.props.fetchCards(this.props.match.url);
+  componentDidMount() {
+    if (this.props.cards.length === 0) {
+      this.props.fetchCards(this.props.match.url);
+    }
   }
 
+  handleClick = () => {
+    this.makeCard();
+  };
+
+  makeCard = () => {
+    if (this.props.cards.length > 0) {
+      let card = this.props.cards.shift();
+      this.setState({ show: false, front: card.front, back: card.back });
+    }
+  };
+
   render() {
-    const { location, match } = this.props;
-    console.log(this.props);
+    const { location } = this.props;
     return (
       <div>
         <h1>{location.state.title} Cards</h1>
-        <button type="button" className="btn btn-primary btn-lg">
+        <button onClick={this.handleClick} className="btn btn-primary btn-lg">
           Study Cards
         </button>
 
-        {/* <Card /> */}
+        <div className="card text-center">
+          <div className="card-body" />
+          <div className="card-header">{this.state.front}</div>
+          <button
+            onClick={() =>
+              this.setState({ show: true, count: this.state.count + 1 })
+            }
+            className="btn btn-secondary btn-sm"
+          >
+            Show Answer
+          </button>
+          <div className="card-header">
+            {this.state.show ? this.state.back : null}
+          </div>
+        </div>
       </div>
     );
   }

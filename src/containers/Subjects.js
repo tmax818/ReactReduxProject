@@ -9,7 +9,6 @@ class Subjects extends Component {
   }
 
   renderButtons = () => {
-    console.log(this.props.subjects);
     return this.props.subjects.map(subject => {
       return (
         <Link

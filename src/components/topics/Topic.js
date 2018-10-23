@@ -1,16 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Subjects from '../../containers/Subjects';
 
-export default class Topic extends Component {
-  render() {
-    console.log(this.props);
-    return (
-      <>
-        <div className="jumbotron">
-          <h1>Topic</h1>
-        </div>
-        <Subjects props={this.props} />
-      </>
-    );
-  }
-}
+const Topic = props => {
+  console.log(props);
+  return (
+    <>
+      <div className="jumbotron">
+        <h1>{props.location.state.title} Topic.js</h1>
+      </div>
+      <Subjects props={props} />
+    </>
+  );
+};
+
+export default Topic;
