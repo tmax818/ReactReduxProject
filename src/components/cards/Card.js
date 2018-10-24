@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
+import DataButtons from './DataButtons';
 
 export default class Card extends Component {
   state = {
     show: false,
     front: '',
     back: '',
-    rating: ''
+    rating: 0
   };
+
+  componentDidMount() {
+    this.makeCard();
+  }
 
   handleClick = () => {
     this.makeCard();
@@ -20,7 +25,11 @@ export default class Card extends Component {
   };
 
   render() {
-    console.log(this.props.cards);
+    let NextButton = {
+      /* <button onClick={this.handleClick} className="btn btn-secondary btn-lg">
+        Show Next Card
+      </button> */
+    };
     return (
       <div>
         <div className="card text-center">
@@ -38,9 +47,7 @@ export default class Card extends Component {
             {this.state.show ? this.state.back : null}
           </div>
         </div>
-        <button onClick={this.handleClick} className="btn btn-secondary btn-lg">
-          Show Next Card
-        </button>
+        <DataButtons handleClick={this.handleClick} />
       </div>
     );
   }

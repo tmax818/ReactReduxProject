@@ -8,11 +8,14 @@ class Cards extends Component {
     show: false
   };
 
-  handleClick = () => {
-    this.setState({ show: true });
+  componentDidMount() {
     if (this.props.cards.length === 0) {
       this.props.fetchCards(this.props.match.url);
     }
+  }
+
+  handleClick = () => {
+    this.setState({ show: true });
   };
 
   render() {
@@ -23,6 +26,7 @@ class Cards extends Component {
         <button onClick={this.handleClick} className="btn btn-primary btn-lg">
           Study Cards
         </button>
+        <br />
         {this.state.show ? <Card cards={this.props.cards} /> : null}
       </div>
     );
