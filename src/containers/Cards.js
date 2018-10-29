@@ -9,9 +9,7 @@ class Cards extends Component {
   };
 
   componentDidMount() {
-    if (this.props.cards.length === 0) {
-      this.props.fetchCards(this.props.match.url);
-    }
+    this.props.fetchCards(this.props.match.url);
   }
 
   handleClick = () => {

@@ -6,16 +6,16 @@ import { Link } from 'react-router-dom';
 
 class Subjects extends Component {
   componentDidMount() {
-    console.log(this.props);
-    if (this.props.subjects.length === 0) {
-      this.props.fetchSubjects(this.props.props.match.params.id);
-    }
+    console.log(this.props.subjects);
+
+    this.props.fetchSubjects(this.props.props.match.params.id);
   }
 
-  componentWillUnmount() {}
+  componentWillUnmount() {
+    console.log(this.props.subjects);
+  }
 
   renderButtons = () => {
-    console.log(this.props);
     return this.props.subjects.map(subject => {
       return (
         <Link
@@ -33,6 +33,7 @@ class Subjects extends Component {
   };
 
   render() {
+    console.log(this.props.subjects);
     return (
       <div>
         <h1>Subjects.js</h1>
