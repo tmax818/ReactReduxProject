@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchCards } from '../actions';
-import Card from '../components/cards/Card';
+import { Link } from 'react-router-dom';
 
 class Cards extends Component {
   state = {
@@ -17,15 +17,20 @@ class Cards extends Component {
   };
 
   render() {
-    const { location } = this.props;
+    const { location, match } = this.props;
+    console.log(location, match);
     return (
       <div>
         <h1>{location.state.title} Cards</h1>
-        <button onClick={this.handleClick} className="btn btn-primary btn-lg">
+        <Link
+          to={{
+            pathname: `${match.url}/cards`,
+            state: { cards: this.props.cards }
+          }}
+          className="btn btn-primary btn-lg"
+        >
           Study Cards
-        </button>
-        <br />
-        {this.state.show ? <Card cards={this.props.cards} /> : null}
+        </Link>
       </div>
     );
   }
